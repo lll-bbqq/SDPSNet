@@ -38,7 +38,7 @@ Selected supported methods are shown in the below table. The results are the 3D 
 | Item | Description |
 |------|-------------|
 | **File path** | `output/ckpt/checkpoint_epoch_80.pth` |
-| **Download** | [⬇️ Click to download](output/ckpt/checkpoint_epoch_80.pth) |
+| **Download** | [⬇️ Click to download](output/ckpt) |
 
 ### Verify the file exists
 ```bash
