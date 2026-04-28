@@ -45,7 +45,42 @@ Selected supported methods are shown in the below table. The results are the 3D 
 ls -lh output/ckpt/checkpoint_epoch_80.pth
 ```
 
+### DAIR-2X-V 3D Object Detection Baselines
+
+将DAIR-V2X-V划分为 **11163帧** 训练集和 **4464帧** 测试集
+
+在测试集上的结果如下：
+
+<table>
+  <tr>
+    <th rowspan="2">Method</th>
+    <th rowspan="2">FPS</th>
+    <th colspan="3">Car</th>
+    <th colspan="3">Ped</th>
+    <th colspan="3">Cyc</th>
+  </tr>
+  <tr>
+    <th>easy</th><th>mod</th><th>hard</th>
+    <th>easy</th><th>mod</th><th>hard</th>
+    <th>easy</th><th>mod</th><th>hard</th>
+  </tr>
+  <tr>
+    <td>Pvrcnn</td><td>19</td><td>69.57</td><td>60.20</td><td>57.87</td><td>43.13</td><td>41.52</td><td>41.16</td><td>41.12</td><td>39.90</td><td>37.53</td>
+  </tr>
+  <tr>
+    <td>SDPSNet</td><td>32</td><td>69.66</td><td>60.24</td><td>58.26</td><td>44.64</td><td>41.43</td><td>40.95</td><td>43.25</td><td>40.85</td><td>38.24</td>
+  </tr>
+</table>
+
+## 📥 Pretrained Model Weights
+
+| Item          | Description                           |
+| ------------- | ------------------------------------- |
+| **File path** | `output/ckpt/checkpoint_epoch_40.pth` |
+| **Download**  | [⬇️ Click to download](output/ckpt)    |
+
 ## Training Commands & Parameters
+
 ### Environment Setup
 
 All required packages are listed in `requirements.txt`.
@@ -65,9 +100,10 @@ pip install -r requirements.txt
 # Training
 python train.py --cfg_file cfgs/kitti_models/SDPSNet.yaml --extra_tag sdpsnet
 
-# Test
+# Test(kitti)
 python test.py --cfg_file cfgs/kitti_models/SDPSNet.yaml --ckpt ../output/ckpt/checkpoint_epoch_80.pth  --save_to_file --extra_tag sdpsnet
-
+# Test(kitti)
+python test.py --cfg_file cfgs/kitti_models/SDPSNet.yaml --ckpt ../output/ckpt/checkpoint_epoch_40.pth  --save_to_file --extra_tag sdpsnet
 ```
 
 
